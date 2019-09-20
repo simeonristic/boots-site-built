@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boots - AT1</title>
+    <link rel="stylesheet" href="/assets/css/styles.css"> 
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+  </head>
+  <body>
+    <nav>
+  <div class="container">
+  <a href="/" class="logotype">
+    Bootstrapping
+  </a>
+  <div class="float-right">
+      <a href="/">
+        Home
+      </a>
+    <div class="dropdown">
+      <a href="/Chapters/">
+        Chapters
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/Haskell">
+          Functional Programming
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Practice/">
+        Practice
+      </a>
+      <div class="dropdown-content">
+        <a href="/Practice/AT0">
+          <b>AT0</b> 2019-09-18
+        </a>
+        <a class="current">
+          <b>AT1</b> 2019-09-25
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Reference/">
+        Reference
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/about">
+          About
+        </a>
+        <a href="/Reference/Miscellany">
+          Miscellany
+        </a>
+        <a class="delimiter">
+          COMPUTER LANGUAGES
+        </a>
+        <a href="/Reference/Haskell">
+          Haskell
+        </a>
+        <a href="/Reference/LaTeX">
+          <script type="math/tex">\mathrm{\LaTeX}</script>
+        </a>
+      </div>
+    </div>
+      <a href="/Feedback">
+        Feedback
+      </a>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</nav>
+
+    <header>
+<div class="container">
+<h1>AT1</h1>
+<hr>
+
+<h2>Advanced Track Assignment 1<br> Corresponding to class 2019-09-25<br> Due 2019-09-27</h2>
+
+
+</div>
+</header>
+
+<div class="container">
+<p class="center large">Should you have any trouble or questions with this assignment, feel free to contact me at sristic[at]seas[dot]upenn[dot]edu.
+Be sure to start the subject line with <strong>“BOOTS:”</strong></p>
+
+<blockquote>
+  <blockquote>
+    <h2 id="note">NOTE:</h2>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>Because of the delay in posting, the deadline is pushed back from before class on 2019-09-25 to Friday 2019-09-27 end of day.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>Future assignments will be due before the class to which they correspond.</p>
+  </blockquote>
+</blockquote>
+
+<h1 id="instructions">Instructions</h1>
+
+<p>You must complete all of these steps to receive credit.</p>
+
+<ol>
+  <li>
+    <p>Download the <a href="/assets/LaTeX/B-2_AT1_LaTeX_Template.tex">AT1 template</a></p>
+  </li>
+  <li>
+    <p>Rename the file <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT1.tex</code>, filling in <code class="highlighter-rouge">&lt;firstname&gt;</code> and <code class="highlighter-rouge">&lt;lastname&gt;</code> with your first and last names, respectively.</p>
+  </li>
+  <li>
+    <p>Fill in the sections marked <code class="highlighter-rouge">TODO</code> as directed in the <a href="#assignment">assignment</a>.</p>
+  </li>
+  <li>
+    <p>Ask at least three questions about LaTeX, this assignment, or feedback in general (filling in the sections marked <code class="highlighter-rouge">TODO</code>).</p>
+  </li>
+  <li>
+    <p>Submit both your source file, <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT1.tex</code>, and the compiled pdf <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT1.pdf</code> to <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMo4LA6eRbLMm-gC7dmQgApn8yG2K2z118aVYB32Icy7cYGQ/viewform?usp=sf_link">this google form</a> by 2019-09-27 end of day.</p>
+  </li>
+</ol>
+
+<h1 id="assignment">Assignment</h1>
+
+<p>Complete all points to the best of your ability.
+If you get stuck and have tried everything you can think of to get unstuck, explain your thinking, demonstrate effort and time.</p>
+
+<p>To set up <script type="math/tex">\mathrm{\LaTeX}</script>, see <a href="/Practice/AT0">AT0</a>.</p>
+
+<p>For more help with <script type="math/tex">\mathrm{\LaTeX}</script>, here is the <a href="/Reference/LaTeX"><script type="math/tex">\mathrm{\LaTeX}</script> Resources Page</a>.</p>
+
+<p>See <a href="#instructions">instructions</a> for logistics for completing the assignment.</p>
+
+<ol>
+  <li>
+    <p>Recreate the Following Formula in <script type="math/tex">\mathrm{\LaTeX}</script> in a display math environment (<code class="highlighter-rouge">\begin{align*} &lt;insert here&gt; \end{align*}</code>):</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\renewcommand{\dif}{\mathop{}\!\mathrm{d}}
+ \newcommand{\pd}[3][]{\frac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}
+ \newcommand{\dpd}[3][]{\dfrac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}
+ \newcommand{\od}[3][]{\dfrac{\dif^{#1} {#2}}{\dif {#3}^{#1}}}
+ \newcommand{\dod}[3][]{\dfrac{\dif^{#1} {#2}}{\dif {#3}^{#1}}}
+ \begin{align*}
+ \pi &= \dod{}{x} \int_0^x \left. \left(
+ \lim_{n \rightarrow \infty}
+ \sum_{k = 1}^n \frac{2x^{2k + 1}(2k)!}{4^k(k!)^2(2k+1)} \right) \dif x \right\vert_{\ \; \! x = 1} \\
+ &= -i \ln (-1)
+ \end{align*} %]]></script>
+
+    <p>Useful commands:
+ <code class="highlighter-rouge">\pi</code>,
+ <code class="highlighter-rouge">\frac{}{}</code>,
+ <code class="highlighter-rouge">\mathrm{d}</code>,
+ <code class="highlighter-rouge">\int^{}_{}</code>,
+ <code class="highlighter-rouge">\sum^{}_{}</code>,
+ <code class="highlighter-rouge">\left.</code>,
+ <code class="highlighter-rouge">\left(</code>,
+ <code class="highlighter-rouge">\right)</code>,
+ <code class="highlighter-rouge">\right|</code>,
+ <code class="highlighter-rouge">\lim_{}</code>,
+ <code class="highlighter-rouge">\to</code>,
+ <code class="highlighter-rouge">\infty</code>,
+ <code class="highlighter-rouge">{}^{}</code>,
+ <code class="highlighter-rouge">{}_{}</code>, and
+ <code class="highlighter-rouge">\ln</code>.</p>
+  </li>
+  <li>
+    <p>Recreate the Following Formula in <script type="math/tex">\mathrm{\LaTeX}</script> in a display math environment (<code class="highlighter-rouge">\begin{align*} &lt;insert here&gt; \end{align*}</code>):</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\renewcommand{\dif}{\mathop{}\!\mathrm{d}}
+ \newcommand{\pd}[3][]{\frac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}
+ \newcommand{\dpd}[3][]{\dfrac{\partial^{#1} {#2}}{\partial {#3}^{#1}}}
+ \newcommand{\od}[3][]{\dfrac{\dif^{#1} {#2}}{\dif {#3}^{#1}}}
+ \newcommand{\dod}[3][]{\dfrac{\dif^{#1} {#2}}{\dif {#3}^{#1}}}
+ \newcommand{\lnf}[2]{\ln \left( \dfrac{#1}{#2} \right) }
+ \renewcommand{\o}{^\ominus}
+ \begin{align*}
+ \Delta H\o_{\mathrm{FeO}, s\rightarrow l} \left(  1 -  \dfrac{T}{T_{\mathrm{FeO}, s\rightarrow l}} \right)   &= RT \lnf{\chi_{\mathrm{FeO}_{(s)}}}{\chi_{\mathrm{FeO}_{(l)}}} \\
+ \therefore  \Delta H\o_{\mathrm{FeO}, s\rightarrow l}
+ &= 31 \, 034 \ \mathrm{\tfrac{J}{mol}}
+ \end{align*} %]]></script>
+
+    <p>Useful commands:
+ <code class="highlighter-rouge">\Delta</code>,
+ <code class="highlighter-rouge">\ominus</code>,
+ <code class="highlighter-rouge">\mathrm{}</code>,
+ <code class="highlighter-rouge">\therefore</code>,
+ <code class="highlighter-rouge">\chi</code>,
+ <code class="highlighter-rouge">\,</code>, and
+ <code class="highlighter-rouge">\tfrac{}{}</code>.</p>
+  </li>
+</ol>
+
+</div>
+
+  </body>
+</html>
