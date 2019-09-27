@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boots - AT2</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131828560-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131828560-2');
+    </script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+  </head>
+  <body>
+    <nav>
+  <div class="container">
+  <a href="/" class="logotype">
+    Bootstrapping
+  </a>
+  <div class="float-right">
+      <a href="/">
+        Home
+      </a>
+    <div class="dropdown">
+      <a href="/Chapters/">
+        Chapters
+      </a>
+      <div class="dropdown-content">
+        <a href="/Chapters/C233_Haskell">
+          C233 Haskell
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Practice/">
+        Practice
+      </a>
+      <div class="dropdown-content">
+        <a href="/Practice/AT0">
+          <b>AT0</b> 2019-09-18
+        </a>
+        <a href="/Practice/AT1">
+          <b>AT1</b> 2019-09-25
+        </a>
+        <a class="current">
+          <b>AT2</b> 2019-10-02
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Reference/">
+        Reference
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/ForEveryone">
+          For Everyone
+        </a>
+        <a href="/Reference/Miscellany">
+          Miscellany
+        </a>
+        <a href="/Reference/AboutMe">
+          About Me
+        </a>
+        <a class="delimiter">
+          COMPUTER LANGUAGES
+        </a>
+        <a href="/Reference/Haskell">
+          Haskell
+        </a>
+        <a href="/Reference/LaTeX">
+          <script type="math/tex">\mathrm{\LaTeX}</script>
+        </a>
+      </div>
+    </div>
+      <a href="/Feedback">
+        Feedback
+      </a>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</nav>
+
+    <header>
+<div class="container">
+<h1>AT2</h1>
+<hr>
+
+<h2>Advanced Track Assignment 2</h2>
+
+
+<h3>Corresponding to class 2019-10-02 <br> Due before class on 2019-10-02</h3>
+
+</div>
+</header>
+
+<div class="container">
+<h1 id="instructions">Instructions</h1>
+
+<p>You must complete all of these steps to receive credit.</p>
+
+<ol>
+  <li>
+    <p>Download the <a href="/assets/LaTeX/B-2_AT2_LaTeX_Template.tex">AT2 template</a>.</p>
+  </li>
+  <li>
+    <p>Rename the file <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT2.tex</code>, filling in <code class="highlighter-rouge">&lt;firstname&gt;</code> and <code class="highlighter-rouge">&lt;lastname&gt;</code> with your first and last names, respectively.</p>
+  </li>
+  <li>
+    <p>Fill in the sections marked <code class="highlighter-rouge">TODO</code> (removing the <code class="highlighter-rouge">TODO</code> markings) as directed in the <a href="#assignment">assignment</a>.</p>
+  </li>
+  <li>
+    <p>Ask at least three questions about the lambda calculus, this assignment, or feedback in general (filling in the sections marked <code class="highlighter-rouge">TODO</code>).</p>
+  </li>
+  <li>
+    <p>Submit both your source file, <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT2.tex</code>, and the compiled pdf <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT2.pdf</code> to
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeeCSwHL9JBvJveZo9agduAi8eeXM-cr-VSt6B_DnqD7n4Q3g/viewform?usp=sf_link">this google form</a>
+before class on 2019-10-02.</p>
+  </li>
+</ol>
+
+<h2 id="help">Help</h2>
+
+<ul>
+  <li>For help with <script type="math/tex">\mathrm{\LaTeX}</script>, here is the <a href="/Reference/LaTeX"><script type="math/tex">\mathrm{\LaTeX}</script> Resources Page</a>.</li>
+  <li>If you need help with the Lambda Calculus, there are many resources you can google. I’m working on a page to put in <a href="/Chapters/">Chapters</a>. Until that’s done, these seem pretty good:
+    <ul>
+      <li>The <a href="https://en.wikipedia.org/wiki/Lambda_calculus">Wikipedia page on Lambda Calculus</a></li>
+      <li><a href="https://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf">https://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf</a> (Just part 1, the first three and a half pages).</li>
+    </ul>
+  </li>
+  <li>If you’re still having trouble, feel free to contact me at sristic[at]seas[dot]upenn[dot]edu.
+Be sure to start the subject line with “<strong>BOOTS:</strong>”</li>
+</ul>
+
+<h1 id="assignment">Assignment</h1>
+
+<p>Complete all points to the best of your ability.
+If you get stuck and have tried everything you can think of to get unstuck, explain your thinking, demonstrate effort and time.</p>
+
+<ol>
+  <li>
+    <p>Convert these expressions from “mathematical” function notation (where <script type="math/tex">f(x, y)</script>), to the “lambda” function notation (where <script type="math/tex">f\ x\ y</script>). Give both the minimally—e.g., <script type="math/tex">f\ x\ y</script>—and fully—e.g., <script type="math/tex">((f\ x)\ y)</script>— parenthesized forms.</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ a &= s(x,g(h(z))) \\
+ b &= f(x,f(y, z),g(h(z))) \\
+ c &= f(f(f(f(x, y), z), w), v) \\
+ d &= j(g(z),x)
+ \end{align*} %]]></script>
+
+    <p>As an example, see</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ \mathrm{example} &= f(x,g(y))
+ \end{align*} %]]></script>
+
+    <p>which has solution</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ \mathrm{example} &= \boxed{f\ x\ (g\ y)} = \boxed{((f\ x)\ (g\ y))}
+ \end{align*} %]]></script>
+
+    <p>with <script type="math/tex">\mathrm{\LaTeX}</script> code</p>
+
+    <div class="language-LaTeX highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">\begin{align*}</span>
+ <span class="k">\mathrm</span><span class="p">{</span>example<span class="p">}</span> <span class="p">&amp;</span>= f(x,g(y)) = <span class="k">\boxed</span><span class="p">{</span>f<span class="k">\ </span>x<span class="k">\ </span>(g<span class="k">\ </span>y)<span class="p">}</span> = <span class="k">\boxed</span><span class="p">{</span>((f<span class="k">\ </span>x)<span class="k">\ </span>(g<span class="k">\ </span>y))<span class="p">}</span>
+ <span class="nt">\end{align*}</span>
+</code></pre></div>    </div>
+
+    <p>NOTE: for spaces in function application (<script type="math/tex">f\ x</script> vs <script type="math/tex">fx</script>): with single symbol identifiers (e.g., <script type="math/tex">f, x, y, g</script>, as in all the problems on this assignment) it doesn’t really matter if you use spaces or not. It only matters when you have variable names that are more than one symbol, as they are in programming languages, as well see, where the space is always manifested. For this assignment, therefore, you can put spaces in (as I’ve done in the example solutions), but you don’t have to.
+ If you want to include spaces, the <script type="math/tex">\mathrm{\LaTeX}</script> command is “<code class="highlighter-rouge">\</code>” (a backslash); however, you must put at least one space right after it, or it will gobble up the adjoining word (interpreting it as the name of a command), so <code class="highlighter-rouge">f\x</code> is bad, <code class="highlighter-rouge">f\ x</code> is good (and so is <code class="highlighter-rouge">f \ x</code>).</p>
+  </li>
+  <li>
+    <p>Using English, describe a procedure, as clearly, concisely, and completely as you can, to determine whether a triangle <script type="math/tex">ABC</script> in the Cartesian (<script type="math/tex">x-y</script>) coordinate plane contains the origin <script type="math/tex">(0,0)</script>.
+You can assume that you are given the
+<script type="math/tex">A(x_A,y_A), B(x_B,y_B), C(x_C,y_C)</script>
+coordinates of each of the vertices <script type="math/tex">A,B,C</script> of the triangle and that the values of the coordinates are real numbers.</p>
+
+    <p>You can describe the procedure with the help of any standard mathematical operations on real numbers (e.g., <script type="math/tex">% <![CDATA[
+<,>,\overset{?}=,+,\times, %]]></script> etc). Be precise enough so that, if given concrete numbers for the coordinates, it would be clear how to compute the answer.</p>
+
+    <p>For example, for coordinates</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+&A(-340,495), B(-153,-910), C(835,-947)  \\
+&X(-175,41), Y(-421,-714), Z(574,-645)  
+\end{align*} %]]></script>
+
+    <p>Triangle <script type="math/tex">ABC</script> contains the origin, while triangle <script type="math/tex">XYZ</script> does not.</p>
+
+    <p>(Adapted from <a href="https://projecteuler.net/problem=102">Problem 102</a> of Project Euler)</p>
+  </li>
+</ol>
+
+</div>
+
+  </body>
+</html>
