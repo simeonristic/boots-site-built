@@ -32,8 +32,8 @@
         Chapters
       </a>
       <div class="dropdown-content">
-        <a class="current">
-          Functional Programming
+        <a href="/Chapters/C233_Haskell">
+          C233 Haskell
         </a>
       </div>
     </div>
@@ -48,6 +48,9 @@
         <a href="/Practice/AT1">
           <b>AT1</b> 2019-09-25
         </a>
+        <a href="/Practice/AT2">
+          <b>AT2</b> 2019-10-02
+        </a>
       </div>
     </div>
     <div class="dropdown">
@@ -55,11 +58,14 @@
         Reference
       </a>
       <div class="dropdown-content">
-        <a href="/Reference/about">
-          About
+        <a href="/Reference/ForEveryone">
+          For Everyone
         </a>
         <a href="/Reference/Miscellany">
           Miscellany
+        </a>
+        <a href="/Reference/AboutMe">
+          About Me
         </a>
         <a class="delimiter">
           COMPUTER LANGUAGES
@@ -93,10 +99,9 @@
 
 <div class="container">
 <h1 id="haskell">Haskell</h1>
-<p>A good programming language to start on functional programming ideas (and one that is ever more readily used in practical applications) is Haskell.</p>
 
 <ol>
-  <li>This tutorial is a good first introduction to Haskell: <a href="https://www.tryhaskell.org">https://www.tryhaskell.org</a></li>
+  <li>This tutorial is a good first introduction to basic Haskell expressions and syntax: <a href="https://www.tryhaskell.org">https://www.tryhaskell.org</a></li>
   <li>A whimsical introduction to most of the aspects of Haskell is <a href="http://learnyouahaskell.com/chapters">http://learnyouahaskell.com/chapters</a></li>
   <li>To practice with Haskell in your Browser, <a href="https://repl.it/languages/haskell">https://repl.it/languages/haskell</a>.
     <ul>
@@ -107,163 +112,9 @@
   </li>
 </ol>
 
-<p class="large">sdfsd</p>
+<hr />
 
-<p class="large"><em>Here is a summary of the things covered in lecture. For more information,
-refer to the first few chapters of <a href="http://learnyouahaskell.com/chapters">http://learnyouahaskell.com/chapters</a>.</em></p>
-
-<h2 id="the-structure-of-code">The Structure of Code</h2>
-<p>The body of a Haskell code file is a bunch of declarations of variable values, represented by expressions, each of which has a particular type, like so:</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">::</span> <span class="o">&lt;</span><span class="kr">type</span><span class="o">&gt;</span>
-<span class="n">a</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-
-<span class="n">x</span> <span class="o">::</span> <span class="o">&lt;</span><span class="kr">type</span><span class="o">&gt;</span>
-<span class="n">x</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-
-<span class="n">myvariable'</span> <span class="o">::</span> <span class="o">&lt;</span><span class="kr">type</span><span class="o">&gt;</span>
-<span class="n">myvariable'</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<h2 id="syntax-mostly">Syntax (mostly)</h2>
-<p>The <code class="highlighter-rouge">&lt;expression&gt;</code> and <code class="highlighter-rouge">&lt;type&gt;</code> sections of the code are filled by, broadly speaking, the following syntax:</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="o">::=</span>             <span class="kt">EXAMPLES</span>
-
-    <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span>               <span class="n">x</span>  <span class="n">y</span>  <span class="n">factorial</span>  <span class="n">id</span>
-
-    <span class="o">&lt;</span><span class="n">constructor</span><span class="o">&gt;</span>            <span class="kt">True</span>  <span class="kt">[]</span>  <span class="p">(</span><span class="o">:</span><span class="p">)</span>
-
-    <span class="o">&lt;</span><span class="n">pattern</span> <span class="n">match</span><span class="o">&gt;</span>          <span class="kr">case</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="kr">of</span>
-                               <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-                               <span class="o">...</span>
-
-    <span class="o">&lt;</span><span class="n">lambda</span><span class="o">&gt;</span>                 <span class="nf">\</span> <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-
-    <span class="o">&lt;</span><span class="n">application</span><span class="o">&gt;</span>            <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-</code></pre></div></div>
-<p>Particular other syntax, like let and where expressions and infix operators, can be considered as syntactic sugar on top of this syntax.</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">::=</span>                <span class="kt">EXAMPLES</span>
-
-    <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span>               <span class="n">x</span>  <span class="n">y</span>  <span class="n">xs</span> <span class="o">...</span> <span class="p">(</span><span class="n">matches</span> <span class="n">anything</span><span class="p">;</span> <span class="n">assigns</span> <span class="n">the</span> <span class="n">matched</span>
-                                            <span class="n">value</span> <span class="n">to</span> <span class="n">the</span> <span class="n">variable</span><span class="p">)</span>
-
-    <span class="o">&lt;</span><span class="n">wildcard</span><span class="o">&gt;</span>               <span class="kr">_</span>            <span class="p">(</span><span class="n">matches</span> <span class="n">anything</span><span class="p">;</span>
-                                            <span class="n">throws</span> <span class="n">away</span> <span class="n">the</span> <span class="n">value</span><span class="p">)</span>
-
-    <span class="o">&lt;</span><span class="n">constructor</span><span class="o">&gt;</span>            <span class="kt">True</span>  <span class="kt">[]</span>
-
-    <span class="o">&lt;</span><span class="n">constructor</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span>  <span class="kt">S</span> <span class="n">x</span>    <span class="kt">Just</span> <span class="kr">_</span>    <span class="n">y</span><span class="o">:</span><span class="kt">[]</span>    <span class="nf">\</span><span class="kr">_</span><span class="o">:</span><span class="kt">[]</span>
-</code></pre></div></div>
-<h2 id="data">Data</h2>
-<p>You define new datatypes (which give the data constructors) by listing all the ways to make (construct) a value of that datatype, as follows:</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">MyType</span> <span class="o">=</span> <span class="kt">Constructor1</span>
-            <span class="o">|</span> <span class="kt">Constructor2</span>
-            <span class="o">|</span> <span class="kt">Constructor3</span> <span class="o">...</span>
-</code></pre></div></div>
-<p>Note, the names of types and of data constructors must start with capital letters.
-Constructors can also take input, and act as functions.
-For example, the <strong>option</strong> type <code class="highlighter-rouge">Maybe</code> has
-a constructor <code class="highlighter-rouge">Nothing</code> which takes no input and gives a <code class="highlighter-rouge">Maybe a</code> and
-a constructor <code class="highlighter-rouge">Just</code> which takes as input a value of type <code class="highlighter-rouge">a</code> and gives a <code class="highlighter-rouge">Maybe a</code>.</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Maybe</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Nothing</span>
-             <span class="o">|</span> <span class="kt">Just</span> <span class="n">a</span>
-</code></pre></div></div>
-<p>Every <strong>natural number</strong> is either zero or one more than (the successor of) another natural number.
-Thus, the natural numbers, have a constructor for zero <code class="highlighter-rouge">Z</code>, that just gives a <code class="highlighter-rouge">Nat</code>,
-and a constructor for successor, <code class="highlighter-rouge">S</code>, that takes some <code class="highlighter-rouge">Nat</code> and gives (its successor) <code class="highlighter-rouge">Nat</code>.
-This kind of data type with a recursive definition is called “inductive.”</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Nat</span> <span class="o">=</span> <span class="kt">Z</span>
-         <span class="o">|</span> <span class="kt">S</span> <span class="kt">Nat</span>
-</code></pre></div></div>
-<p>Another very useful example, <strong>lists</strong>, have
-a constructor <code class="highlighter-rouge">[]</code> (pronounced “Nil”) and
-a constructor <code class="highlighter-rouge">(:)</code> (pronounced “Cons” (short for constructor)).
-This definition,</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">List</span> <span class="n">a</span> <span class="o">=</span> <span class="kt">Nil</span>
-            <span class="o">|</span> <span class="kt">Cons</span> <span class="n">a</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span>
-</code></pre></div></div>
-<p>uses written out words for the type and constructors,
-while this definition (the real one) uses the actual syntax.</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="kt">[]</span>
-         <span class="o">|</span> <span class="n">a</span> <span class="o">:</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-</code></pre></div></div>
-
-<h2 id="functions">Functions</h2>
-<p>This is the core of the representation of computation in Haskell and why Haskell is a Functional Programming language.
-<em>more to come…</em>
-<!-- TODO --></p>
-
-<h2 id="types">Types</h2>
-<p>Every (well-typed) expression has a type.
-The “judgement” that an expression <code class="highlighter-rouge">&lt;expression&gt;</code> has type <code class="highlighter-rouge">&lt;type&gt;</code> is written</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="o">::</span> <span class="o">&lt;</span><span class="kr">type</span><span class="o">&gt;</span>
-</code></pre></div></div>
-<h4 id="data-constructors">Data Constructors</h4>
-<p>These have type the type whose values they construct:</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">True</span>  <span class="o">::</span> <span class="kt">Boolean</span>
-<span class="kt">False</span> <span class="o">::</span> <span class="kt">Boolean</span>
-<span class="kt">[]</span>    <span class="o">::</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
-<span class="kt">Z</span>     <span class="o">::</span> <span class="kt">Nat</span>
-</code></pre></div></div>
-<h4 id="functions-1">Functions</h4>
-<p>The type of a function that takes
-values of type <code class="highlighter-rouge">a</code> and gives values of type <code class="highlighter-rouge">b</code> has type <code class="highlighter-rouge">a -&gt; b</code>.
-For example, the function <code class="highlighter-rouge">not</code>, which takes a <code class="highlighter-rouge">Boolean</code> value and gives its negation,
-has type <code class="highlighter-rouge">Boolean -&gt; Boolean</code>:</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">not</span> <span class="o">::</span> <span class="kt">Boolean</span> <span class="o">-&gt;</span> <span class="kt">Boolean</span>
-<span class="n">not</span> <span class="o">=</span> <span class="nf">\</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">b</span> <span class="kr">then</span> <span class="kt">False</span> <span class="kr">else</span> <span class="kt">True</span>  
-</code></pre></div></div>
-<h4 id="function-application">Function Application</h4>
-<p>If   <code class="highlighter-rouge">f :: a -&gt; b</code>   and   <code class="highlighter-rouge">x :: a</code> , then   <code class="highlighter-rouge">(f x) :: b</code></p>
-
-<h4 id="pattern-matching">Pattern Matching</h4>
-<p>The type of a pattern match expression is the type of all of the subexpressions.
-They must all be the same type for the overall expression to be well-typed.</p>
-
-<h4 id="types-1">Types</h4>
-<p>Every expression has a type, even types themselves! Their types are called “kinds”.
-The kind of the usual types, like <code class="highlighter-rouge">Boolean</code>, <code class="highlighter-rouge">Int</code>, and <code class="highlighter-rouge">[a]</code> is <code class="highlighter-rouge">*</code>,
-let’s pronounce it “type” (though, in Haskell, it’s usually pronounced “star”).</p>
-
-<h2 id="pattern-matching-1">Pattern Matching</h2>
-<p>Data constructors build values, this is how we use values.
-Examples (the syntax <code class="highlighter-rouge">&lt;expression (n)&gt;</code> denotes  an expression that can depend on <code class="highlighter-rouge">n</code>):</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">case</span> <span class="o">&lt;</span><span class="kt">Boolean</span><span class="o">&gt;</span> <span class="kr">of</span>
-  <span class="kt">True</span>  <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-  <span class="kt">False</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-
-<span class="kr">case</span> <span class="o">&lt;</span><span class="kt">Nat</span><span class="o">&gt;</span> <span class="kr">of</span>
-  <span class="kt">Z</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-  <span class="kt">S</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span>
-
-<span class="kr">case</span> <span class="o">&lt;</span><span class="kt">List</span><span class="o">&gt;</span> <span class="kr">of</span>
-  <span class="kt">[]</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-  <span class="n">x</span><span class="o">:</span><span class="n">xs</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre></div></div>
-<p>If you need nested pattern matches,</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">case</span> <span class="o">&lt;</span><span class="kt">Boolean</span><span class="o">&gt;</span> <span class="kr">of</span>
-  <span class="kt">True</span>  <span class="o">-&gt;</span>
-    <span class="kr">case</span> <span class="o">&lt;</span><span class="kt">Nat</span><span class="o">&gt;</span> <span class="kr">of</span>
-      <span class="kt">Z</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-      <span class="kt">S</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span>
-  <span class="kt">False</span> <span class="o">-&gt;</span>
-    <span class="kr">case</span> <span class="o">&lt;</span><span class="kt">Nat</span><span class="o">&gt;</span> <span class="kr">of</span>
-      <span class="kt">Z</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-      <span class="kt">S</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre></div></div>
-<p>You can simplify by matching on two expressions simultaneously
-(technically, you are constructing a pair, and then immediately pattern matching the pair constructor away)</p>
-<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">case</span> <span class="p">(</span><span class="o">&lt;</span><span class="kt">Boolean</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="kt">Nat</span><span class="o">&gt;</span><span class="p">)</span> <span class="kr">of</span>
-  <span class="p">(</span><span class="kt">True</span><span class="p">,</span>  <span class="kt">Z</span><span class="p">)</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-  <span class="p">(</span><span class="kt">True</span><span class="p">,</span>  <span class="kt">S</span> <span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span>
-  <span class="p">(</span><span class="kt">False</span><span class="p">,</span> <span class="kt">Z</span><span class="p">)</span>   <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
-  <span class="p">(</span><span class="kt">False</span><span class="p">,</span> <span class="kt">S</span> <span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">&gt;</span>
-</code></pre></div></div>
-
-<h2 id="variables">Variables</h2>
-<p>We assign values to variables.
-Computation is just the process of substituting variables and applying functions.
-<em>more to come…</em></p>
+<p class="large"><em>See the <a href="/Chapters/C233_Haskell">Haskell Chapter</a> page for more information.</em></p>
 
 </div>
 
