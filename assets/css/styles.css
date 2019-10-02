@@ -2,6 +2,8 @@ body { font-family: Helvetica, Arial, sans-serif; font-weight: 300; min-height: 
 
 .container { max-width: 800px; margin: auto; padding: 0px 50px; }
 
+.body.container { padding-bottom: 200px; }
+
 div.narrow { padding: 0px 100px; }
 
 hr { border: none; border-top-style: solid; border-width: thin; }
