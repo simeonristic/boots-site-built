@@ -32,8 +32,17 @@
         Chapters
       </a>
       <div class="dropdown-content">
+        <a class="delimiter">
+          CHAPTERS
+        </a>
         <a href="/Chapters/C233">
           C233 Haskell
+        </a>
+        <a class="delimiter">
+          LECTURES
+        </a>
+        <a href="/Chapters/L01">
+          Lambda Calculus
         </a>
       </div>
     </div>
@@ -50,6 +59,9 @@
         </a>
         <a class="current">
           <b>AT2</b> 2019-10-02
+        </a>
+        <a href="/Practice/AT3">
+          <b>AT3</b> 2019-10-23
         </a>
       </div>
     </div>
@@ -140,22 +152,21 @@ Be sure to start the subject line with “<strong>BOOTS:</strong>”</li>
 
 <h1 id="assignment">Assignment</h1>
 
-<p>Complete all points to the best of your ability.
+<p id="p1">Complete all points to the best of your ability.
 If you get stuck and have tried everything you can think of to get unstuck, explain your thinking, demonstrate effort and time.</p>
 
 <ol>
   <li>
-    <p>Convert these expressions from “mathematical” function notation (where <script type="math/tex">f(x, y)</script>), to the “lambda” function notation (where <script type="math/tex">f\ x\ y</script>). Give both the minimally—e.g., <script type="math/tex">f\ x\ y</script>—and fully—e.g., <script type="math/tex">((f\ x)\ y)</script>— parenthesized forms.</p>
+    <p>Convert these expressions from “mathematical” function notation (where <script type="math/tex">f(x, y)</script>), to the “lambda” function notation (where <script type="math/tex">f\ x\ y</script>).
+Give both the minimally—e.g., <script type="math/tex">f\ x\ y\ z</script>—and fully—e.g., <script type="math/tex">(((f\ x)\ y)\ z)</script>— parenthesized forms.</p>
 
-    <script type="math/tex; mode=display">% <![CDATA[
+    <p><script type="math/tex">% <![CDATA[
 \begin{align*}
  a &= s(x,g(h(z))) \\
  b &= f(x,f(y, z),g(h(z))) \\
  c &= f(f(f(f(x, y), z), w), v) \\
  d &= j(g(z),x)
- \end{align*} %]]></script>
-
-    <p>As an example, see</p>
+ \end{align*} %]]></script>As an example, see</p>
 
     <script type="math/tex; mode=display">% <![CDATA[
 \begin{align*}
@@ -176,7 +187,7 @@ If you get stuck and have tried everything you can think of to get unstuck, expl
  <span class="nt">\end{align*}</span>
 </code></pre></div>    </div>
 
-    <p>NOTE: for spaces in function application (<script type="math/tex">f\ x</script> vs <script type="math/tex">fx</script>): with single symbol identifiers (e.g., <script type="math/tex">f, x, y, g</script>, as in all the problems on this assignment) it doesn’t really matter if you use spaces or not. It only matters when you have variable names that are more than one symbol, as they are in programming languages, as well see, where the space is always manifested. For this assignment, therefore, you can put spaces in (as I’ve done in the example solutions), but you don’t have to.
+    <p>NOTE: for spaces in function application (<script type="math/tex">f\ x</script> vs <script type="math/tex">fx</script>): with single symbol identifiers (e.g., <script type="math/tex">f, x, y, g</script>, as in all the problems on this assignment) it doesn’t really matter if you use spaces or not. It only matters when you have variable names that are more than one symbol, as they are in programming languages, as we’ll see, where the space is always manifested. For this assignment, therefore, you can put spaces in (as I’ve done in the example solutions), but you don’t have to.
  If you want to include spaces, the <script type="math/tex">\mathrm{\LaTeX}</script> command is “<code class="highlighter-rouge">\</code>” (a backslash); however, you must put at least one space right after it, or it will gobble up the adjoining word (interpreting it as the name of a command), so <code class="highlighter-rouge">f\x</code> is bad, <code class="highlighter-rouge">f\ x</code> is good (and so is <code class="highlighter-rouge">f \ x</code>).</p>
   </li>
   <li>

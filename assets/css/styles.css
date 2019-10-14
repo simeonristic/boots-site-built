@@ -56,6 +56,8 @@ h1, h2 { color: red; }
 
 h3, h4, h5, h6 { margin-bottom: -7px; }
 
+h1::before, h2::before, h3::before { display: block; content: " "; margin-top: -50px; height: 50px; visibility: hidden; pointer-events: none; }
+
 a { color: inherit; }
 
 a:hover { color: red; }

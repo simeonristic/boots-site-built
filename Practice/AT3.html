@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boots - AT3</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131828560-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131828560-2');
+    </script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+  </head>
+  <body>
+    <nav>
+  <div class="container">
+  <a href="/" class="logotype">
+    Bootstrapping
+  </a>
+  <div class="float-right">
+      <a href="/">
+        Home
+      </a>
+    <div class="dropdown">
+      <a href="/Chapters/">
+        Chapters
+      </a>
+      <div class="dropdown-content">
+        <a class="delimiter">
+          CHAPTERS
+        </a>
+        <a href="/Chapters/C233">
+          C233 Haskell
+        </a>
+        <a class="delimiter">
+          LECTURES
+        </a>
+        <a href="/Chapters/L01">
+          Lambda Calculus
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Practice/">
+        Practice
+      </a>
+      <div class="dropdown-content">
+        <a href="/Practice/AT0">
+          <b>AT0</b> 2019-09-18
+        </a>
+        <a href="/Practice/AT1">
+          <b>AT1</b> 2019-09-25
+        </a>
+        <a href="/Practice/AT2">
+          <b>AT2</b> 2019-10-02
+        </a>
+        <a class="current">
+          <b>AT3</b> 2019-10-23
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Reference/">
+        Reference
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/ForEveryone">
+          For Everyone
+        </a>
+        <a href="/Reference/Miscellany">
+          Miscellany
+        </a>
+        <a href="/Reference/AboutMe">
+          About Me
+        </a>
+        <a class="delimiter">
+          COMPUTER LANGUAGES
+        </a>
+        <a href="/Reference/Haskell">
+          Haskell
+        </a>
+        <a href="/Reference/LaTeX">
+          <script type="math/tex">\mathrm{\LaTeX}</script>
+        </a>
+      </div>
+    </div>
+      <a href="/Feedback">
+        Feedback
+      </a>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</nav>
+
+    <header>
+<div class="container">
+<h1>AT3</h1>
+<hr>
+
+<h2>Advanced Track Assignment 3</h2>
+
+
+<h3>Corresponding to class 2019-10-23 <br> Due 2019-10-25 End of Day</h3>
+
+</div>
+</header>
+
+<div class="container body">
+<h1 id="instructions">Instructions</h1>
+
+<p>You must complete all of these steps to receive credit.</p>
+
+<ol>
+  <li>
+    <p>Download the <a href="/assets/LaTeX/B-2_AT3_LaTeX_Template.tex">AT3 template</a>.</p>
+  </li>
+  <li>
+    <p>Rename the file <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT3.tex</code>, filling in <code class="highlighter-rouge">&lt;firstname&gt;</code> and <code class="highlighter-rouge">&lt;lastname&gt;</code> with your first and last names, respectively.</p>
+  </li>
+  <li>
+    <p>Fill in the sections marked <code class="highlighter-rouge">TODO</code> (removing the <code class="highlighter-rouge">TODO</code> markings) as directed in the <a href="#assignment">assignment</a>.</p>
+  </li>
+  <li>
+    <p>Ask at least three questions about
+this assignment or feedback in general
+(filling in the sections marked <code class="highlighter-rouge">TODO</code>).</p>
+  </li>
+  <li>
+    <p>Submit both your source file, <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT3.tex</code>, and the compiled pdf <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT3.pdf</code> to
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfHrFN0uzRtQMTx73Kdv6gr8vUu5MneeDCKo9pomd_hvBL0wA/viewform?usp=sf_link">this google form</a>
+by 2019-10-25 End of Day.</p>
+  </li>
+</ol>
+
+<h2 id="help">Help</h2>
+
+<ul>
+  <li>Check out the <a href="#reference">Reference</a> section below.</li>
+  <li>For more help with <script type="math/tex">\mathrm{\LaTeX}</script>, here is the <a href="/Reference/LaTeX"><script type="math/tex">\mathrm{\LaTeX}</script> Resources Page</a>.</li>
+  <li>If you’re still having trouble, feel free to contact me at sristic[at]seas[dot]upenn[dot]edu.
+Be sure to start the subject line with “<strong>BOOTS:</strong>”</li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<p>NOTE: We are using two notations for functions for this assignment, both the math-like infix symbol notation (as in <script type="math/tex">1 + 2</script>) and the lambda-like function notation (as in <script type="math/tex">\mathrm{add}\ 1\ 2</script>) with spaces instead of parentheses and commas for the entirety of the problem. Note that we will <em>not</em> at all use the function notation with parentheses (as in <script type="math/tex">f(x)</script>).</p>
+
+<p>We are dealing with variables <script type="math/tex">p,q,\ldots</script> which can take what are called boolean values, that is, either the value <script type="math/tex">\mathrm{true}</script> or the value <script type="math/tex">\mathrm{false}</script>.</p>
+
+<p>We can define functions on booleans, like <script type="math/tex">\mathrm{not}</script>, which, when given a value <script type="math/tex">\mathrm{true}</script> returns <script type="math/tex">\mathrm{false}</script> (so that <script type="math/tex">\mathrm{not\ true = false}</script>) and vice versa.
+There is a standard set of functions on booleans <script type="math/tex">p</script> and <script type="math/tex">q</script>:</p>
+<ul>
+  <li><script type="math/tex">\mathrm{not}\ p</script>,
+    <ul>
+      <li>also notated <script type="math/tex">\lnot p</script> (LaTeXed with <code class="highlighter-rouge">\lnot</code> (logical not))</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\mathrm{and}\ p\ q</script>,
+    <ul>
+      <li>also notated <script type="math/tex">p \land q</script> (LaTeXed with <code class="highlighter-rouge">\land</code>)</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\mathrm{or}\ p\ q</script>, the non-exclusive or (true if at least one of <script type="math/tex">p</script> and <script type="math/tex">q</script> are true),
+    <ul>
+      <li>also notated <script type="math/tex">p \lor q</script>  (LaTeXed with <code class="highlighter-rouge">\lor</code>)</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\mathrm{xor}\ p\ q</script>, the exclusive or (true if exactly one of <script type="math/tex">p</script> and <script type="math/tex">q</script> are true)
+    <ul>
+      <li>also notated <script type="math/tex">p \oplus q</script>  (LaTeXed with <code class="highlighter-rouge">\oplus</code>)</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\mathrm{implies}\ p\ q</script>,
+    <ul>
+      <li>also notated <script type="math/tex">p \to q</script> (LaTeXed with <code class="highlighter-rouge">\to</code> or <code class="highlighter-rouge">\rightarrow</code>)</li>
+    </ul>
+  </li>
+  <li><script type="math/tex">\mathrm{nand}\ p\ q</script>,
+    <ul>
+      <li>also notated <script type="math/tex">p \barwedge q</script> (LaTeXed with <code class="highlighter-rouge">\barwedge</code>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The definitions of these functions are given in the following truth table,
+using <script type="math/tex">0</script> for false and <script type="math/tex">1</script> for true.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\begin{array}{cc|cccc}
+\hline
+p & q & \lnot p & p \land q & p \lor q & p \oplus q & p \to q & p \barwedge q \\ \hline
+0 & 0 &    1    &     0     &    0     &     0      & 1    & 1   \\
+0 & 1 &    1    &     0     &    1     &     1      & 1    & 1   \\
+1 & 0 &    0    &     0     &    1     &     1      & 0    & 1   \\
+1 & 1 &    0    &     1     &    1     &     0      & 1    & 0   \\
+  \hline
+\end{array}
+\end{align*} %]]></script>
+
+<p>There are 16 different possible boolean functions of two variables (why?). It turns out that the <script type="math/tex">\mathrm{nand}</script> function is enough to define any other boolean function. That is, it is possible to write any boolean function of <script type="math/tex">p</script> and <script type="math/tex">q</script> as an expression using only <script type="math/tex">p</script>, <script type="math/tex">q</script>, and <script type="math/tex">\mathrm{nand}</script> (and parentheses).</p>
+
+<h1 id="assignment">Assignment</h1>
+
+<p>Complete all points to the best of your ability.
+If you get stuck and have tried everything you can think of to get unstuck, explain your thinking, demonstrate effort and time.
+I’m not looking for a correct solution; I’m looking for your thought process.</p>
+
+<ol>
+  <li>
+    <p>Convert this expression from math-like function notation (where <script type="math/tex">f(x, y)</script>), to the lambda-like function notation (where <script type="math/tex">f\ x\ y</script>).
+Give both the minimally—e.g., <script type="math/tex">f\ x\ y\ z</script>—and fully—e.g., <script type="math/tex">(((f\ x)\ y)\ z)</script>— parenthesized forms.</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ e &= g(h(j,k),a,f(f(x, y)), x)
+ \end{align*} %]]></script>
+
+    <p>This is a follow-up from <a href="/Practice/AT2#p1">AT2 problem 1</a>, where there is an example solution.</p>
+  </li>
+  <li>
+    <p>Show that <script type="math/tex">\mathrm{nand}\ (\mathrm{nand}\ p\ p)\ p</script> is <script type="math/tex">\mathrm{true}</script> for all possible values of <script type="math/tex">p</script>.</p>
+  </li>
+  <li>
+    <p>Write definitions for:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+ 1)&& \mathrm{not}\ p &= \lnot p \\
+ 2)&& \mathrm{or}\ p\ q  &=   p \lor q \\
+ 3)&& \mathrm{xor}\ p\ q  &=   p \oplus q \\
+ 4)&& \mathrm{implies}\ p\ q  &=   p \to q
+ \end{align*} %]]></script>
+
+    <p>Using only the <script type="math/tex">\operatorname{nand}</script> function.
+ Write your answers in both the lambda-like notation (with “<script type="math/tex">\operatorname{nand}</script>”) and the math-like notation (with “<script type="math/tex">\barwedge</script>” (LaTeXed with <code class="highlighter-rouge">\barwedge</code>)).</p>
+
+    <p>For example, the function <script type="math/tex">\mathrm{and}</script> written with <script type="math/tex">\mathrm{nand}</script> is</p>
+
+    <script type="math/tex; mode=display">\newcommand{\nand}{\mathrm{nand}}
+ \mathrm{and}\ p\ q = p \land q
+ = \boxed{ \nand\ (\nand\ p\ q)\ (\nand\ p\ q) }
+ = \boxed{(p \barwedge q) \barwedge (p \barwedge q)}</script>
+
+    <p>with <script type="math/tex">\mathrm{\LaTeX}</script> code</p>
+    <div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">\mathrm</span><span class="p">{</span>and<span class="p">}</span><span class="k">\ </span>p<span class="k">\ </span>q = p <span class="k">\land</span> q
+ = <span class="k">\boxed</span><span class="p">{</span> <span class="k">\nand\ </span>(<span class="k">\nand\ </span>p<span class="k">\ </span>q)<span class="k">\ </span>(<span class="k">\nand\ </span>p<span class="k">\ </span>q) <span class="p">}</span>
+ = <span class="k">\boxed</span><span class="p">{</span>(p <span class="k">\barwedge</span> q) <span class="k">\barwedge</span> (p <span class="k">\barwedge</span> q)<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+</div>
+
+  </body>
+</html>
