@@ -63,6 +63,9 @@
         <a href="/Practice/AT3">
           <b>AT3</b> 2019-10-23
         </a>
+        <a href="/Practice/AT4">
+          <b>AT4</b> 2019-10-30
+        </a>
       </div>
     </div>
     <div class="dropdown">
@@ -139,6 +142,7 @@ refer to the first few chapters of <a href="http://learnyouahaskell.com/chapters
 
     <span class="o">&lt;</span><span class="n">pattern</span> <span class="n">match</span><span class="o">&gt;</span>          <span class="kr">case</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span> <span class="kr">of</span>
                                <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
+                               <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
                                <span class="o">...</span>
 
     <span class="o">&lt;</span><span class="n">lambda</span><span class="o">&gt;</span>                 <span class="nf">\</span> <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span>
@@ -148,16 +152,27 @@ refer to the first few chapters of <a href="http://learnyouahaskell.com/chapters
 <p>Particular other syntax, like let and where expressions and infix operators, can be considered as syntactic sugar on top of this syntax.</p>
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span> <span class="o">::=</span>                <span class="kt">EXAMPLES</span>
 
-    <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span>               <span class="n">x</span>  <span class="n">y</span>  <span class="n">xs</span> <span class="o">...</span> <span class="p">(</span><span class="n">matches</span> <span class="n">anything</span><span class="p">;</span> <span class="n">assigns</span> <span class="n">the</span> <span class="n">matched</span>
-                                            <span class="n">value</span> <span class="n">to</span> <span class="n">the</span> <span class="n">variable</span><span class="p">)</span>
-
-    <span class="o">&lt;</span><span class="n">wildcard</span><span class="o">&gt;</span>               <span class="kr">_</span>            <span class="p">(</span><span class="n">matches</span> <span class="n">anything</span><span class="p">;</span>
-                                            <span class="n">throws</span> <span class="n">away</span> <span class="n">the</span> <span class="n">value</span><span class="p">)</span>
-
-    <span class="o">&lt;</span><span class="n">constructor</span><span class="o">&gt;</span>            <span class="kt">True</span>  <span class="kt">[]</span>
-
-    <span class="o">&lt;</span><span class="n">constructor</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">pattern</span><span class="o">&gt;</span>  <span class="kt">S</span> <span class="n">x</span>    <span class="kt">Just</span> <span class="kr">_</span>    <span class="n">y</span><span class="o">:</span><span class="kt">[]</span>    <span class="nf">\</span><span class="kr">_</span><span class="o">:</span><span class="kt">[]</span>
+    <span class="o">&lt;</span><span class="n">variable</span><span class="o">&gt;</span>               <span class="n">x</span>  <span class="n">y</span>  <span class="n">xs</span> <span class="o">...</span>
 </code></pre></div></div>
+<blockquote>
+  <blockquote>
+    <p>(matches anything; assigns the matched value to the variable)</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="n">wildcard</span><span class="o">&gt;</span>               <span class="kr">_</span>
+</code></pre></div></div>
+<blockquote>
+  <blockquote>
+    <p>(matches anything; throws away the value)</p>
+  </blockquote>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;constructor&gt;            True  []
+
+    &lt;constructor&gt; &lt;pattern&gt;  S x    Just _    y:[]    \_:[]
+</code></pre></div></div>
+
 <h2 id="data">Data</h2>
 <p>You define new datatypes (which give the data constructors) by listing all the ways to make (construct) a value of that datatype, as follows:</p>
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">MyType</span> <span class="o">=</span> <span class="kt">Constructor1</span>
@@ -215,7 +230,7 @@ values of type <code class="highlighter-rouge">a</code> and gives values of type
 For example, the function <code class="highlighter-rouge">not</code>, which takes a <code class="highlighter-rouge">Boolean</code> value and gives its negation,
 has type <code class="highlighter-rouge">Boolean -&gt; Boolean</code>:</p>
 <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">not</span> <span class="o">::</span> <span class="kt">Boolean</span> <span class="o">-&gt;</span> <span class="kt">Boolean</span>
-<span class="n">not</span> <span class="o">=</span> <span class="nf">\</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">b</span> <span class="kr">then</span> <span class="kt">False</span> <span class="kr">else</span> <span class="kt">True</span>  
+<span class="n">not</span> <span class="o">=</span> <span class="nf">\</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="kr">if</span> <span class="n">b</span> <span class="kr">then</span> <span class="kt">False</span> <span class="kr">else</span> <span class="kt">True</span>
 </code></pre></div></div>
 <h4 id="function-application">Function Application</h4>
 <p>If   <code class="highlighter-rouge">f :: a -&gt; b</code>   and   <code class="highlighter-rouge">x :: a</code> , then   <code class="highlighter-rouge">(f x) :: b</code></p>
