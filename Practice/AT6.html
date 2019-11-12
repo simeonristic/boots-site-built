@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boots - AT6</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131828560-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131828560-2');
+    </script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+  </head>
+  <body>
+    <nav>
+  <div class="container">
+  <a href="/" class="logotype">
+    Bootstrapping
+  </a>
+  <div class="float-right">
+      <a href="/">
+        Home
+      </a>
+    <div class="dropdown">
+      <a href="/Chapters/">
+        Chapters
+      </a>
+      <div class="dropdown-content">
+        <a class="delimiter">
+          CHAPTERS
+        </a>
+        <a href="/Chapters/C233">
+          C233 Haskell
+        </a>
+        <a class="delimiter">
+          LECTURES
+        </a>
+        <a href="/Chapters/L01">
+          Lambda Calculus
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Practice/">
+        Practice
+      </a>
+      <div class="dropdown-content">
+        <a href="/Practice/AT0">
+          <b>AT0</b> 2019-09-18
+        </a>
+        <a href="/Practice/AT1">
+          <b>AT1</b> 2019-09-25
+        </a>
+        <a href="/Practice/AT2">
+          <b>AT2</b> 2019-10-02
+        </a>
+        <a href="/Practice/AT3">
+          <b>AT3</b> 2019-10-23
+        </a>
+        <a href="/Practice/AT4">
+          <b>AT4</b> 2019-10-30
+        </a>
+        <a href="/Practice/AT5">
+          <b>AT5</b> 2019-11-06
+        </a>
+        <a class="current">
+          <b>AT6</b> 2019-11-13
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Reference/">
+        Reference
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/ForEveryone">
+          For Everyone
+        </a>
+        <a href="/Reference/Miscellany">
+          Miscellany
+        </a>
+        <a href="/Reference/AboutMe">
+          About Me
+        </a>
+        <a class="delimiter">
+          COMPUTER LANGUAGES
+        </a>
+        <a href="/Reference/Haskell">
+          Haskell
+        </a>
+        <a href="/Reference/LaTeX">
+          <script type="math/tex">\mathrm{\LaTeX}</script>
+        </a>
+      </div>
+    </div>
+      <a href="/Feedback">
+        Feedback
+      </a>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</nav>
+
+    <header>
+<div class="container">
+<h1>AT6</h1>
+<hr>
+
+<h2>Advanced Track Assignment 6</h2>
+
+
+<h3>Corresponding to class 2019-11-13 <br> Due before class on 2019-11-15</h3>
+
+</div>
+</header>
+
+<div class="container body">
+<h1 id="instructions">Instructions</h1>
+
+<ol>
+  <li>
+    <p>Create a Haskell file and complete it according to the assignment. Name it <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT6.hs</code>.</p>
+  </li>
+  <li>
+    <p>Send me an email at: sristic[at]seas[dot]upenn[dot]edu
+by 2019-11-15 End of Day, containing:</p>
+
+    <ul>
+      <li>Your file <code class="highlighter-rouge">&lt;firstname&gt;_&lt;lastname&gt;_AT6.hs</code>.</li>
+      <li>At least three questions about this assignment or feedback in general.</li>
+    </ul>
+
+    <p>Be sure to give your email the subject line “<strong>BOOTS: AT6</strong>”.</p>
+  </li>
+</ol>
+
+<h2 id="help">Help</h2>
+
+<ul>
+  <li>Check out the <a href="/Reference/Haskell">Haskell</a> page.</li>
+  <li>If you’re still having trouble, feel free to contact me at sristic[at]seas[dot]upenn[dot]edu.
+Be sure to start the subject line with “<strong>BOOTS:</strong>”</li>
+</ul>
+
+<h1 id="assignment">Assignment</h1>
+
+<p>Complete all points to the best of your ability.
+If you get stuck and have tried everything you can think of to get unstuck, explain your thinking, demonstrate effort and time.</p>
+
+<ol>
+  <li>
+    <p>Copy-paste the code below into <a href="https://repl.it/languages/haskell">https://repl.it/languages/haskell</a> (or, if you have installed Haskell on your computer, open your text editor of choice). The stub code is also found in
+   <a href="/assets/Haskell/B-2_AT6_Haskell_Template.hs">this file</a>.</p>
+
+    <p>Replace the parts marked <code class="highlighter-rouge">undefined</code> so that they meet the specification in the comments.
+ You may not use library functions in your solutions.
+ Chapters 2 through 5 of Learn You a Haskell are a good reference for this material.
+ (the lines that start with two hyphens are comments which describe the line(s) below, the compiler ignores them)</p>
+
+    <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">-- map' applies (f :: a -&gt; b) to each element of the list (l :: [a])</span>
+ <span class="c1">-- Here, I've provided you with the cases, for the examples below, you'll</span>
+ <span class="c1">-- have to break down the cases yourself</span>
+ <span class="n">map'</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+ <span class="n">map'</span> <span class="n">f</span> <span class="kt">[]</span>    <span class="o">=</span> <span class="n">undefined</span>
+ <span class="n">map'</span> <span class="n">f</span> <span class="p">(</span><span class="n">h</span><span class="o">:</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">undefined</span>
+
+
+ <span class="c1">-- intersperse' intersperses (x :: a) in the list (l :: [a]).</span>
+ <span class="c1">-- For example, intersperse' 1 [2,3,4,5,6] gives [2,1,3,1,4,1,5,1,6]</span>
+ <span class="c1">-- and intersperse' 1 [] gives []</span>
+ <span class="n">intersperse'</span> <span class="o">::</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+ <span class="n">intersperse'</span> <span class="o">=</span> <span class="n">undefined</span>
+
+
+ <span class="c1">-- concat' takes a list of lists and concatenates them together into a</span>
+ <span class="c1">-- single list</span>
+ <span class="c1">-- For example, concat' [[1,2],[],[4],[1,5,2]] gives [1,2,4,1,5,2]</span>
+ <span class="n">concat'</span> <span class="o">::</span> <span class="p">[[</span><span class="n">a</span><span class="p">]]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+ <span class="n">concat'</span> <span class="o">=</span> <span class="n">undefined</span>
+
+
+ <span class="c1">-- invert' takes a list of pairs (a, b) and gives back the list with all</span>
+ <span class="c1">-- the pairs reversed</span>
+ <span class="c1">-- For example, invert' [('a', 1), ('b', 4)] gives [(1, 'a'), (4, 'b')]</span>
+ <span class="c1">-- and invert' [] gives []</span>
+ <span class="n">invert'</span> <span class="o">::</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span> <span class="o">-&gt;</span> <span class="p">[(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)]</span>
+ <span class="n">invert'</span> <span class="o">=</span> <span class="n">undefined</span>
+
+
+ <span class="c1">-- Leave this line in, it keeps the repl from throwing an error when you</span>
+ <span class="c1">-- run the code.</span>
+ <span class="c1">-- Chapter 9 of Learn You a Haskell gets into what this line actually means</span>
+ <span class="c1">-- (it's deep).</span>
+ <span class="n">main</span> <span class="o">=</span> <span class="n">return</span> <span class="nb">()</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+</div>
+
+  </body>
+</html>

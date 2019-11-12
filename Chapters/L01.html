@@ -69,6 +69,9 @@
         <a href="/Practice/AT5">
           <b>AT5</b> 2019-11-06
         </a>
+        <a href="/Practice/AT6">
+          <b>AT6</b> 2019-11-13
+        </a>
       </div>
     </div>
     <div class="dropdown">
@@ -227,10 +230,12 @@ The machine is assumed to be given as <script type="math/tex">m = (q_0, q_a, q_r
 <script type="math/tex">q_a : Q \to \mathbb{B}</script> is a function that returns <script type="math/tex">\top</script> if the input is an accept state and <script type="math/tex">\bot</script> otherwise,
 <script type="math/tex">q_r : Q \to \mathbb{B}</script> is a function that returns <script type="math/tex">\top</script> if the input is an reject state and <script type="math/tex">\bot</script> otherwise,
 <script type="math/tex">b  : \Gamma</script> is the blank symbol, and
-<script type="math/tex">\delta :  Q \times \Gamma \to Q \times \Gamma \times \{L, R\}</script> is the transition function from a state and read</p>
+<script type="math/tex">\delta :  Q \times \Gamma \to Q \times \Gamma \times \{L, R\}</script> is the transition function from the current state and read tape character to the next state, the written tape character, and the head movement (Left or Right).</p>
 
 <p>The input string is assumed to be in the form of a linked list in the Scott encoding (where the list <code class="highlighter-rouge">[1,2]</code> is represented as
-<script type="math/tex">\lambda c. \lambda n. c 1 (\lambda c. \lambda n. c 2 n)</script>)</p>
+<script type="math/tex">\lambda c. \lambda n. c 1 (\lambda c. \lambda n. c 2 n)</script>).</p>
+
+<p>This lambda expression takes as input the machine <script type="math/tex">m</script> and the string <script type="math/tex">s</script> and returns <script type="math/tex">\top</script> if <script type="math/tex">m(s)</script> accepts, returns <script type="math/tex">\bot</script> if <script type="math/tex">m(s)</script> rejects, and never normalizes if <script type="math/tex">m(s)</script> doesn’t halt.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{align*}
@@ -240,7 +245,7 @@ U =\, & \lambda m. \lambda s. m \lambda q_0. \lambda q_a. \lambda q_r. \lambda b
  &\quad \quad \quad q_a q \top (\\
  &\quad \quad \quad q_r q \bot (\\
  &\quad \quad \quad \quad (\lambda u.\\
- &\quad \quad \quad \quad \quad t_b (\quad \quad \quad \quad  d (\lambda p. p q b) (u t_a t_b))\\
+ &\quad \quad \quad \quad \quad t_b (\quad \quad \quad \ \ \!\  d (\lambda p. p q b) (u t_a t_b))\\
  &\quad \quad \quad \quad \quad \quad  (\lambda g. \lambda t_b. d (\lambda p. p q g) (u t_a t_b))\\
  &\quad \quad \quad \quad ) \lambda t_a. \lambda t_b. \lambda q. \lambda g. \lambda h.\\
  &\quad \quad \quad \quad \quad h (t_a (f q \bot \lambda c. \lambda n. c g t_b)\\
