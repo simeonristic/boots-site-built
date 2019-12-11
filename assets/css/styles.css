@@ -82,6 +82,8 @@ ol ol { list-style-type: lower-alpha; }
 
 .center { text-align: center; }
 
+p img { display: block; margin: auto; }
+
 code { font-size: 16px; }
 
 iframe { display: block; margin: 0 auto; }

@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Boots - git</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131828560-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131828560-2');
+    </script>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+  </head>
+  <body>
+    <nav>
+  <div class="container">
+  <a href="/" class="logotype">
+    Bootstrapping
+  </a>
+  <div class="float-right">
+      <a href="/">
+        Home
+      </a>
+    <div class="dropdown">
+      <a href="/Chapters/">
+        Chapters
+      </a>
+      <div class="dropdown-content">
+        <a class="delimiter">
+          CHAPTERS
+        </a>
+        <a href="/Chapters/C233">
+          C233 Haskell
+        </a>
+        <a class="delimiter">
+          LECTURES
+        </a>
+        <a href="/Chapters/L01">
+          Lambda Calculus
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Practice/">
+        Practice
+      </a>
+      <div class="dropdown-content">
+        <a href="/Practice/AT10">
+          <b>AT10</b> 2019-12-11
+        </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="/Reference/">
+        Reference
+      </a>
+      <div class="dropdown-content">
+        <a href="/Reference/ForEveryone">
+          For Everyone
+        </a>
+        <a href="/Reference/Miscellany">
+          Miscellany
+        </a>
+        <a href="/Reference/AboutMe">
+          About Me
+        </a>
+        <a class="delimiter">
+          COMPUTERS
+        </a>
+        <a href="/Reference/git">
+          git
+        </a>
+        <a href="/Reference/Haskell">
+          Haskell
+        </a>
+        <a href="/Reference/LaTeX">
+          <script type="math/tex">\mathrm{\LaTeX}</script>
+        </a>
+      </div>
+    </div>
+      <a href="/Feedback">
+        Feedback
+      </a>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</nav>
+
+    <header>
+<div class="container">
+<h1>git</h1>
+<hr>
+
+<h2>A Guide to git</h2>
+
+
+<h3>Version Control</h3>
+
+</div>
+</header>
+
+<div class="container body">
+<p><code class="highlighter-rouge">git</code> is a version control system invented by Linus Torvalds as tool to facilitate development of his namesake operating system kernel, Linux.</p>
+
+<p>Version control is exactly what it sounds like: it lets you keep track of the changes in a codebase.
+It is extremely flexible, allowing you to branch and merge version timelines, annotate changes, collaborate with others, maintain and merge distributed databases on remote servers, and more.</p>
+
+<p>There are two aspects to this guide:</p>
+<ul>
+  <li>How git works (objective)</li>
+  <li>How to use git (subjective)</li>
+</ul>
+
+<p>I will give suggestions of how to use git as an example and to illustrate how git works, but the beauty of git is that it is meant to be flexible to different workflows, and its philosophy is that you can use it however you like.</p>
+
+<h1 id="installation">Installation</h1>
+
+<p>Github is an online hosting platform for git repositories. You can <a href="https://github.com">create a free account</a> to get started.</p>
+
+<p>Regardless of whether you use GitHub, you’ll want to install git locally on your system. This is a good guide (from the official git website): <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+
+<p>For newcomers to computer programming and those who have never used the command line interface on their computers, git can be intimidating and confusing.</p>
+
+<p><img src="https://imgs.xkcd.com/comics/git.png" alt="https://xkcd.com/1597/" /></p>
+
+<p>A good place to start instead is with <a href="https://desktop.github.com">GitHub Desktop</a>, a GUI interface for most of the basic features of git (certainly all you will need for now).</p>
+
+<p>The <a href="https://atom.io">Atom text editor</a> (from GitHub) has git (and GitHub) integration.</p>
+
+<p>This list of git GUI applications:
+<a href="https://git-scm.com/downloads/guis">https://git-scm.com/downloads/guis</a></p>
+
+<p>The convenience is that all of these GUI apps are like frontends while the backend, git, stays the same. They can be replaced with one another (and even used in tandem) seamlessly.</p>
+
+<h1 id="learning-resources">Learning Resources</h1>
+
+<p><em>These are some things that I have come across that are at least somewhat helpful. I’ll be updating this as I discover more.</em></p>
+
+<ul>
+  <li><a href="https://blog.angularindepth.com/become-a-git-pro-by-learning-git-architecture-in-15-minutes-9c995db6faeb">https://blog.angularindepth.com/become-a-git-pro-by-learning-git-architecture-in-15-minutes-9c995db6faeb</a></li>
+  <li>Git mental model and workflow: <a href="https://blog.osteele.com/2008/05/my-git-workflow/">https://blog.osteele.com/2008/05/my-git-workflow/</a>
+-Git manual Workflow section: <a href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html#the-workflow">https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html#the-workflow</a></li>
+  <li>Implementing git with Haskell (advanced): <a href="https://vaibhavsagar.com/blog/2017/08/13/i-haskell-a-git/">https://vaibhavsagar.com/blog/2017/08/13/i-haskell-a-git/</a></li>
+</ul>
+
+<h1 id="basics">Basics</h1>
+
+<p>Git version controls a folder that’s called a repository. A locally-stored (on your computer rather than the cloud) repository is identified by having a <code class="highlighter-rouge">.git</code> (possibly hidden) folder in it, where all of the git data (history, branches, etc) are stored.</p>
+
+<p>There are:
+commits, stashes, branches, tags, blobs, a HEAD, an index, remotes, …</p>
+
+<h3 id="commits">Commits</h3>
+
+<p>The history of changes is broken down into commits, which are snapshots of the state of the repository at a particular time.
+(don’t worry, git is very efficient about compressing the history, it only stores the differences)
+Commits should represent a single atomic change, one that cannot be broken down further.
+A typical rule of thumb for the size of a git commit is 5-10 lines of code.</p>
+
+<p>Each commit has some nonnegative number of parents, commits that come immediately before it in the history.
+The initial commit has zero parents, normal commits have one, and merge commits have two (or more).</p>
+
+<p>Each commit has a hash value, a long hexadecimal identifier which uniquely identifies it among all commits everywhere in the universe (there is a probability of hash collision, but it is astronomically small).</p>
+
+<h4 id="commit-message">Commit Message</h4>
+
+<p>Each commit comes with a message:
+a (required) one-line summary of what the changes mean and/or why they were done, and an (optional) multi-line (or multi-paragraph) description going into more detail.</p>
+
+<p>Writing good messages is essential. Follow the <a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">50/72 rule</a>. Summaries should start with a capitalized word (preferably a verb like “Add”, “Drop”, “Fix”, or “Refactor”), be written in present tense, and end without punctuation.</p>
+
+<p><img src="https://imgs.xkcd.com/comics/git_commit.png" alt="https://xkcd.com/1296/" /></p>
+
+<h4 id="stashes">Stashes</h4>
+
+<p><em>more to come…</em></p>
+
+<h3 id="branches">Branches</h3>
+
+<p>Branches are references to particular commits which can be updated with new commits on top of it.</p>
+
+<h4 id="tags">Tags</h4>
+
+<p>Tags are like branches, except they are meant to remain fixed. They may refer to specific released versions etc.</p>
+
+<h3 id="checkout-and-head">Checkout and Head</h3>
+
+<p><em>more to come…</em></p>
+
+<h3 id="remote">Remote</h3>
+
+<p><em>more to come…</em></p>
+
+<h2 id="reviewing-history">Reviewing History</h2>
+
+<p><em>more to come…</em></p>
+
+<h2 id="fixing-mistakes-how-to-get-out-of-trouble">Fixing Mistakes (how to get out of trouble)</h2>
+
+<ol>
+  <li>
+    <p>Commit onto wrong branch</p>
+
+    <p><em>more to come…</em></p>
+  </li>
+  <li>
+    <p>Add changes to a previous commit</p>
+
+    <p><em>more to come…</em></p>
+  </li>
+</ol>
+
+</div>
+
+  </body>
+</html>
